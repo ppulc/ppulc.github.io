@@ -1,0 +1,113 @@
+@use '../foundations/form-elements.scss';
+@use '../foundations/typography/mixins';
+
+.muse-tabs {
+  ul {
+    align-items: center;
+    border-bottom: 1px solid var(--muse-border-default, #d6d6d6);
+    display: inline-flex;
+    gap: var(--muse-space-70, 24px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    @include mixins.muse-text-style(30);
+
+    align-items: flex-start;
+    align-self: stretch;
+    border-bottom: 2px solid transparent;
+    color: var(--muse-text-default-lighter, #606162);
+    display: flex;
+    justify-content: center;
+    min-width: 44px;
+    padding: var(--muse-space-30, 8px) var(--muse-space-0);
+    text-decoration: none;
+
+    @media (width >= 600px) {
+      @include mixins.muse-text-style(40);
+
+      padding: calc(1px * var(--muse-root-rem-size)) var(--muse-space-0);
+    }
+
+    &[aria-current='page'] {
+      @include mixins.muse-text-style(30, 500);
+
+      border-bottom: 2px solid var(--muse-border-accent, #0070d2);
+      color: var(--muse-text-default, #1b1c1d);
+
+      @media (width >= 600px) {
+        @include mixins.muse-text-style(40, 500);
+      }
+    }
+
+    &:hover {
+      @include mixins.muse-text-style(30, 500);
+
+      color: var(--muse-text-accent-darker, #0060ad);
+      border-bottom: 2px solid var(--muse-border-accent-darker, #0060ad);
+
+      @media (width >= 600px) {
+        @include mixins.muse-text-style(40, 500);
+      }
+    }
+
+    &:focus {
+      @extend %muse-focus-ring;
+
+      border-radius: var(--muse-border-radius-10, 2px);
+    }
+  }
+}
+
+.muse-vertical-tabs {
+  ul {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--muse-space-70, 24px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    @include mixins.muse-text-style(40);
+
+    color: var(--muse-text-default-lighter, #606162);
+    display: block;
+    min-width: 200px;
+    padding-left: var(--muse-space-60, 20px);
+    text-decoration: none;
+
+    &[aria-current='page'] {
+      @include mixins.muse-text-style(40, 500);
+
+      border-left: 2px solid var(--muse-border-accent, #0070d2);
+      color: var(--muse-text-default, #1b1c1d);
+    }
+
+    &:hover {
+      @include mixins.muse-text-style(40, 500);
+
+      color: var(--muse-text-accent-darker, #0060ad);
+    }
+
+    &:focus {
+      @extend %muse-focus-ring;
+
+      border-radius: var(--muse-border-radius-10, 2px);
+    }
+  }
+}

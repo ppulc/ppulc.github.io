@@ -1,0 +1,116 @@
+%muse-modal {
+  // TODO: properly tokenize this value
+  --muse-modal-scrim: rgba(27 29 28 / 50%);
+
+  align-items: center;
+  background-color: var(--muse-modal-scrim);
+  block-size: 100vh;
+  display: flex;
+  inline-size: 100vw;
+  justify-content: center;
+  position: fixed;
+  z-index: var(--muse-z-index-top);
+}
+
+.muse-modal-dialog {
+  position: relative;
+  background-color: var(--muse-background-neutral);
+  border: none;
+  box-shadow: var(--muse-elevation-high);
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  overflow-y: auto;
+  padding: var(--muse-space-140) var(--muse-space-50) var(--muse-space-120) var(--muse-space-50);
+
+  @media (width >= 600px) {
+    padding: var(--muse-space-140) var(--muse-space-140) var(--muse-space-120) var(--muse-space-140);
+    max-height: 72vh;
+    max-width: 677px;
+    min-width: auto;
+    min-height: fit-content;
+  }
+
+  @media (width >= 1024px) {
+    max-width: 736px;
+  }
+
+  @media (width >= 1440px) {
+    max-width: 792px;
+  }
+}
+
+.muse-modal-dialog-close {
+  color: var(--muse-text-default);
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: var(--muse-space-50);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.muse-modal-dialog-footer {
+  display: flex;
+  gap: var(--muse-space-60);
+  justify-content: center;
+  margin-top: var(--muse-space-100);
+  width: 100%;
+
+  @media (width >= 600px) {
+    justify-content: flex-end;
+  }
+
+  @media (width >= 1024px) {
+    margin-top: var(--muse-space-120);
+  }
+}
+
+.muse-modal--partial {
+  @extend %muse-modal;
+}
+
+.muse-modal--full {
+  @extend %muse-modal;
+
+  .muse-modal-dialog {
+    @media (width >= 600px) {
+      max-height: 96vh;
+      max-width: 1200px;
+      min-width: auto;
+      min-height: fit-content;
+    }
+  }
+}
+
+.muse-modal--mini {
+  @extend %muse-modal;
+
+  .muse-modal-dialog {
+    min-height: fit-content;
+    padding: var(--muse-space-120) var(--muse-space-50) var(--muse-space-100) var(--muse-space-50);
+
+    @media (width >= 600px) {
+      padding: var(--muse-space-120) var(--muse-space-100) var(--muse-space-100)
+        var(--muse-space-100);
+      max-height: 48vh;
+      max-width: 504px;
+      min-width: auto;
+    }
+
+    @media (width >= 1024px) {
+      max-width: 548px;
+    }
+
+    @media (width >= 1440px) {
+      max-width: 421px;
+    }
+  }
+
+  .muse-modal-dialog-footer {
+    margin-top: var(--muse-space-70);
+  }
+}

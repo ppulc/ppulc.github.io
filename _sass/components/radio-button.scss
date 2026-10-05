@@ -1,0 +1,142 @@
+@use '../foundations/form-elements.scss';
+@use '../foundations/typography/text-styles.scss';
+
+.muse-radio,
+%muse-radio {
+  grid-template-areas:
+    'input label'
+    'input label';
+  column-gap: var(--muse-space-40);
+  display: grid;
+  grid-auto-columns: auto 1fr;
+  justify-items: start;
+  margin-bottom: var(--muse-space-40);
+  place-content: start start;
+
+  &:hover {
+    div.muse-radio-label {
+      color: var(--muse-form-field-text-hover);
+    }
+
+    input {
+      border-color: var(--muse-form-field-border-hover);
+    }
+  }
+
+  &--reduced {
+    input[type='radio'] {
+      width: var(--muse-size-50);
+      height: var(--muse-size-50);
+    }
+
+    .muse-radio-text div.muse-radio-label {
+      @extend %muse-text-style-body-reduced;
+    }
+    .muse-radio-text div.muse-radio-secondary-text {
+      @extend %muse-text-style-caption;
+    }
+  }
+
+  input {
+    align-items: center;
+    appearance: none;
+    border-radius: var(--muse-radius-circle);
+    border: 1px solid var(--muse-form-field-border);
+    color: currentColor;
+    display: flex;
+    font: inherit;
+    grid-area: input;
+    height: var(--muse-size-60);
+    justify-content: center;
+    margin: 0;
+    width: var(--muse-size-60);
+
+    &::before {
+      border-radius: var(--muse-radius-circle);
+      box-shadow: inset 1em 1em var(--muse-background-accent);
+      content: '';
+      height: var(--muse-space-40);
+      transform: scale(0);
+      width: var(--muse-space-40);
+    }
+    &:checked {
+      border-color: var(--muse-border-accent);
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+
+    &:focus-visible {
+      @extend %muse-focus-ring;
+    }
+  }
+
+  .muse-radio-text,
+  .muse-radio-text-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--muse-space-30);
+    grid-area: label;
+
+    .muse-radio-label {
+      @extend %muse-text-style-body;
+
+      color: var(--muse-form-field-text);
+    }
+
+    .muse-radio-secondary-text {
+      @extend %muse-text-style-body-reduced;
+
+      color: var(--muse-form-field-text-secondary);
+    }
+  }
+}
+
+.muse-radio-button-tile {
+  @extend %muse-radio;
+
+  align-items: center;
+  border-radius: var(--muse-radius-30);
+  border: 1px solid var(--muse-form-field-tile-border);
+  padding-left: var(--muse-space-50);
+
+  &:hover {
+    border-color: var(--muse-form-field-border-hover);
+  }
+
+  .muse-radio-text,
+  .muse-radio-text-stacked {
+    border-left: 1px solid var(--muse-form-field-tile-border);
+    padding: var(--muse-space-50);
+
+    div.muse-radio-label {
+      @extend %muse-text-style-body--bold;
+    }
+
+    .muse-badge,
+    .muse-badge--reduced {
+      margin-bottom: var(--muse-space-40);
+    }
+  }
+
+  &:focus-within {
+    @extend %muse-focus-ring;
+
+    input {
+      box-shadow: none;
+    }
+  }
+
+  &:has(input:checked) {
+    border: 1px solid var(--muse-form-field-border-active);
+  }
+
+  .muse-radio-text {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

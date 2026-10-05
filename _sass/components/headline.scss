@@ -1,0 +1,101 @@
+@use '../_functions/generics';
+
+/// Replace Generate Headline css based on selected style
+/// @param {String} $style - Style to select, select from "display, display-reduced, heading, heading-reduced, and title"
+/// @return {String} - CSS of corresponding placeholder selectors
+@mixin muse-headline($style) {
+  @extend %muse-headline-#{generics.str-replace(#{$style}, ' ', '-')};
+}
+
+/// Headline placeholder sleectors
+%muse-headline-display {
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-70);
+  font-weight: var(--muse-font-weight-300);
+  line-height: var(--muse-line-height-70);
+
+  @media (width >= 600px) {
+    font-size: var(--muse-font-size-80);
+    line-height: var(--muse-line-height-80);
+  }
+
+  @media (width >= 1440px) {
+    font-size: var(--muse-font-size-90);
+    line-height: var(--muse-line-height-90);
+    letter-spacing: var(--muse-letter-spacing-tight);
+  }
+}
+
+%muse-headline-display-reduced {
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-60);
+  font-weight: var(--muse-font-weight-300);
+  line-height: var(--muse-line-height-60);
+
+  @media (width >= 600px) {
+    font-size: var(--muse-font-size-70);
+    line-height: var(--muse-line-height-70);
+  }
+
+  @media (width >= 1024px) {
+    font-size: var(--muse-font-size-80);
+    line-height: var(--muse-line-height-80);
+  }
+}
+
+%muse-headline-heading {
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-60);
+  font-weight: var(--muse-font-weight-300);
+  line-height: var(--muse-line-height-60);
+
+  @media (width >= 1024px) {
+    font-size: var(--muse-font-size-70);
+    line-height: var(--muse-line-height-70);
+  }
+}
+
+%muse-headline-heading-reduced {
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-50);
+  font-weight: var(--muse-font-weight-300);
+  line-height: var(--muse-line-height-50);
+
+  @media (width >= 600px) {
+    font-size: var(--muse-font-size-60);
+    line-height: var(--muse-line-height-60);
+  }
+}
+
+%muse-headline-title {
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-40);
+  font-weight: var(--muse-font-weight-300);
+  line-height: var(--muse-line-height-50);
+
+  @media (width >= 1440px) {
+    font-size: var(--muse-font-size-50);
+    line-height: var(--muse-line-height-50);
+  }
+}
+
+// Headline Utility Classes
+.muse-headline-display {
+  @include muse-headline('display');
+}
+
+.muse-headline-display-reduced {
+  @include muse-headline('display-reduced');
+}
+
+.muse-headline-heading {
+  @include muse-headline('heading');
+}
+
+.muse-headline-heading-reduced {
+  @include muse-headline('heading-reduced');
+}
+
+.muse-headline-title {
+  @include muse-headline('title');
+}

@@ -1,0 +1,63 @@
+@use '../foundations/typography/text-styles.scss';
+
+.muse-accordion {
+  font-family: var(--muse-font-family-default);
+
+  details {
+    border-top: 1px solid var(--muse-border-default);
+
+    &:last-of-type {
+      border-bottom: 1px solid var(--muse-border-default);
+    }
+
+    summary {
+      @extend %muse-text-style-title-reduced;
+
+      display: flex;
+      align-items: center;
+      color: var(--muse-text-default);
+      padding: var(--muse-space-50) 0;
+
+      &:hover {
+        color: var(--muse-text-accent-darker);
+        cursor: pointer;
+      }
+
+      [class*='__muse-theme--dark'] &,
+      [data-theme='dark'] & {
+        color: var(--muse-text-inverse);
+
+        &:hover {
+          color: var(--muse-text-accent-lighter);
+        }
+      }
+
+      .muse-accordion-icon-left {
+        margin-right: var(--muse-space-60);
+      }
+
+      .muse-accordion-icon-right {
+        margin-left: auto;
+      }
+    }
+
+    .muse-accordion-body {
+      padding-top: var(--muse-space-30);
+      padding-bottom: var(--muse-space-70);
+      font-size: 16px;
+    }
+
+    &[open] {
+      summary {
+        font-weight: 500;
+
+        .muse-accordion-arrow {
+          transform: rotate(180deg);
+        }
+      }
+      .muse-accordion-body {
+        display: block;
+      }
+    }
+  }
+}

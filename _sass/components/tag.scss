@@ -1,0 +1,48 @@
+.muse-tag {
+  --muse-tag-border-color-hover: var(--muse-border-accent);
+  --muse-tag-border-color: var(--muse-border-accent);
+  --muse-tag-text-color-hover: var(--muse-text-accent);
+  --muse-tag-text-color: var(--muse-text-default);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    --muse-tag-border-color-hover: var(--muse-border-accent-lighter);
+    --muse-tag-border-color: var(--muse-border-inverse);
+    --muse-tag-text-color-hover: var(--muse-text-accent-lighter);
+    --muse-tag-text-color: var(--muse-text-inverse);
+  }
+
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid var(--muse-tag-border-color);
+  color: var(--muse-tag-text);
+  display: inline-flex;
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-20);
+  font-weight: var(--muse-font-weight-300);
+  gap: var(--muse-space-30);
+  justify-content: center;
+  line-height: var(--muse-line-height-20);
+  padding: var(--muse-space-30) var(--muse-space-40);
+
+  input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  svg {
+    display: none;
+    height: 12px;
+    width: 12px;
+  }
+
+  input:checked + span + svg {
+    display: block;
+  }
+
+  &:hover {
+    border: 1px solid var(--muse-tag-border-color-hover);
+    cursor: pointer;
+    color: var(--muse-tag-text-color-hover);
+  }
+}

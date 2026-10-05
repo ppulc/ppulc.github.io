@@ -1,0 +1,35 @@
+.muse-tile-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--muse-grid-gap-tight);
+  justify-content: center;
+
+  .muse-tile {
+    flex: 1 0 35%;
+  }
+
+  @media (width >= 1024px) {
+    display: grid;
+    gap: var(--muse-grid-gap-normal);
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(2, minmax(0, 220px));
+
+    // Complex selectors here for art directed grid layout.
+    &:has(div:nth-child(10):last-child),
+    &:has(div:nth-child(5):last-child) {
+      grid-template-columns: repeat(5, minmax(0, 248px));
+    }
+
+    &:has(div:nth-child(9):last-child),
+    &:has(div:nth-child(6):last-child),
+    &:has(div:nth-child(3):last-child) {
+      grid-template-columns: repeat(3, minmax(0, 248px));
+    }
+
+    &:has(div:nth-child(8):last-child),
+    &:has(div:nth-child(7):last-child),
+    &:has(div:nth-child(4):last-child) {
+      grid-template-columns: repeat(4, minmax(0, 248px));
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@use './typography/text-styles.scss';
+
+%muse-focus-ring {
+  --muse-focus-ring: 0 0 0 4px var(--muse-border-inverse), 0 0 0 6px var(--muse-border-accent);
+
+  box-shadow: var(--muse-focus-ring);
+  outline: none;
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    --muse-focus-ring: 0 0 0 2px var(--muse-border-emphasis), 0 0 0 4px var(--muse-border-inverse),
+      0 0 0 6px var(--muse-border-accent);
+  }
+}
+
+%muse-form-field,
+.muse-form-field {
+  --muse-form-field-background: var(--muse-background-neutral);
+  --muse-form-field-border-active: var(--muse-border-accent);
+  --muse-form-field-border-hover: var(--muse-border-accent-darker);
+  --muse-form-field-border: var(--muse-border-default);
+  --muse-form-field-checked-fill: var(--muse-background-accent);
+  --muse-form-field-checkmark: var(--muse-text-inverse);
+  --muse-form-field-text-hover: var(--muse-text-accent-darker);
+  --muse-form-field-text-secondary: var(--muse-text-default-lighter);
+  --muse-form-field-text: var(--muse-text-default);
+  --muse-form-field-tile-border: var(--muse-border-default);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    --muse-form-field-background: var(--muse-background-emphasis);
+    --muse-form-field-border-hover: var(--muse-border-accent);
+    --muse-form-field-border: var(--muse-border-inverse);
+    --muse-form-field-checked-fill: var(--muse-background-accent);
+    --muse-form-field-text-hover: var(--muse-text-accent);
+    --muse-form-field-text-secondary: var(--muse-text-inverse);
+    --muse-form-field-text: var(--muse-text-inverse);
+    --muse-form-field-tile-border: var(--muse-border-inverse);
+  }
+
+  .muse-inline-message--error {
+    display: none;
+  }
+
+  &--has-error {
+    --muse-form-field-border: var(--muse-border-error);
+    --muse-form-field-tile-border: var(--muse-border-error);
+
+    color: var(--muse-form-field-text);
+
+    [class*='__muse-theme--dark'] &,
+    [data-theme='dark'] & {
+      --muse-form-field-border: var(--muse-border-error);
+    }
+    .muse-inline-message {
+      display: none;
+    }
+    .muse-inline-message--error {
+      display: block;
+    }
+  }
+
+  @extend %muse-text-style-body;
+
+  span {
+    align-self: center;
+    padding-left: var(--muse-space-10);
+    color: inherit;
+    line-height: 0;
+  }
+}

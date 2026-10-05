@@ -1,0 +1,82 @@
+.muse-switch {
+  --muse-switch-label-color: var(--muse-text-default);
+  --muse-switch-background-color: var(--muse-background-neutral-darkest);
+  --muse-switch-background-color-active: var(--muse-background-accent);
+  --muse-switch-foreground-color: var(--muse-background-neutral);
+  --muse-focus-ring: 0 0 0 4px var(--muse-border-inverse), 0 0 0 6px var(--muse-border-accent);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    --muse-switch-label-color: var(--muse-text-inverse);
+    --muse-switch-background-color: var(--muse-background-accent);
+    --muse-switch-foreground-color: var(--muse-background-neutral);
+  }
+
+  display: flex;
+  flex-direction: row;
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-30);
+  width: fit-content;
+
+  input {
+    grid-area: switch;
+    position: absolute;
+    visibility: hidden;
+
+    &:checked + label .muse-switch-custom {
+      background: var(--muse-switch-background-color-active);
+      border-color: var(--muse-switch-background-color-active);
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  label {
+    align-items: center;
+    display: grid;
+    grid-template-areas: 'switch label';
+    gap: var(--muse-space-40);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      .muse-switch-custom {
+        box-shadow: var(--muse-focus-ring);
+        outline: none;
+      }
+    }
+  }
+
+  .muse-switch-custom {
+    align-items: center;
+    background: var(--muse-switch-background-color);
+    border-radius: 48px;
+    border: 2px solid var(--muse-switch-background-color);
+    box-sizing: border-box;
+    display: inline-flex;
+    grid-area: switch;
+    height: 22px;
+    position: relative;
+    width: 44px;
+
+    &::after {
+      background: var(--muse-switch-foreground-color);
+      border-radius: 100%;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 45%;
+    }
+  }
+
+  .muse-switch-text {
+    grid-area: label;
+  }
+}

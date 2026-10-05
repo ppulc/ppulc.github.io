@@ -1,0 +1,71 @@
+@use '../foundations/form-elements.scss';
+@use '../foundations/typography/text-styles.scss';
+
+.muse-tile {
+  background: var(--muse-background-neutral);
+  border-radius: 16px;
+  border: 1px solid var(--muse-border-default);
+  max-width: 220px;
+  min-width: 138px;
+  padding: var(--muse-space-50);
+  width: 100%;
+
+  @media (width >= 1024px) {
+    border-radius: var(--muse-radius-40);
+    gap: var(--muse-space-50);
+    max-width: 248px;
+    min-width: 138px;
+    padding: var(--muse-space-70);
+  }
+
+  &:focus-within {
+    @extend %muse-focus-ring;
+
+    a {
+      outline: none;
+    }
+  }
+
+  &:hover {
+    a {
+      color: var(--muse-text-default);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+  }
+
+  a {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--muse-space-40);
+    justify-content: center;
+    text-decoration: none;
+
+    @media (width >= 1024px) {
+      gap: var(--muse-space-50);
+    }
+  }
+
+  &__image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: bottom center;
+    width: 100%;
+
+    &--icon {
+      aspect-ratio: 1 / 1;
+      max-width: 80px;
+    }
+  }
+  &__text {
+    color: var(--muse-text-default);
+    font-size: var(--muse-font-size-20);
+    font-weight: var(--muse-font-weight-500);
+    text-align: center;
+
+    @media (width >= 1024px) {
+      font-size: var(--muse-font-size-30);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+%muse-card {
+  font-family: var(--muse-font-family-default);
+  padding: var(--muse-space-80);
+}
+
+.muse-card--elevated {
+  @extend %muse-card;
+
+  background: var(--muse-background-neutral);
+  box-shadow: var(--muse-elevation-default);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    background: var(--muse-background-neutral);
+    color: var(--muse-text-default);
+  }
+}
+.muse-card--stroke {
+  @extend %muse-card;
+
+  border-radius: 24px;
+  border: 1px solid var(--muse-border-default);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    border: 1px solid var(--muse-border-inverse);
+    color: var(--muse-text-inverse);
+  }
+}
+.muse-card--div {
+  @extend %muse-card;
+
+  border-right: 1px solid var(--muse-border-default, #d6d6d6);
+  border-left: 1px solid var(--muse-border-default, #d6d6d6);
+  padding: 0 var(--muse-space-80);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    border-right: 1px solid var(--muse-border-inverse-weakest);
+    border-left: 1px solid var(--muse-border-inverse-weakest);
+    color: var(--muse-text-inverse);
+  }
+}

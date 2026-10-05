@@ -1,0 +1,281 @@
+@use 'text-styles.scss';
+@use 'mixins.scss';
+@use '../../components/headline.scss';
+
+/* stylelint-disable scss/at-extend-no-missing-placeholder -- Need to figure out better structure for headline exports. */
+.muse-longform-typography-defaults {
+  @extend %muse-text-style-body;
+
+  hr,
+  .hr,
+  .rule {
+    width: 48px;
+    height: 1px;
+    background-color: var(--muse-border-default);
+    margin-top: var(--muse-space-120);
+    margin-bottom: var(--muse-space-120);
+    margin-left: var(--muse-space-0);
+  }
+
+  p {
+    @extend %muse-text-style-body;
+
+    margin-top: 0;
+
+    &:has(
+        + :is(
+            .a,
+            .image,
+            .muse-button-group,
+            .muse-button-primary,
+            .muse-button-secondary,
+            .picture,
+            .table,
+            .video,
+            .list-label,
+            a,
+            figure,
+            img,
+            p,
+            picture,
+            table,
+            video,
+            blockquote,
+            pre
+          )
+      ) {
+      margin-bottom: var(--muse-space-70);
+    }
+
+    &:has(+ :is(h1, .h1, h2, .h2, h4, .h4)) {
+      margin-bottom: var(--muse-space-100);
+    }
+
+    &:has(+ :is(h3, .h3)) {
+      margin-bottom: var(--muse-space-100);
+    }
+    &:has(+ :is(h5, .h5, h6, .h6)) {
+      margin-bottom: var(--muse-space-70);
+    }
+
+    &:has(+ :is(ol, ul)) {
+      margin-bottom: var(--muse-space-50);
+    }
+  }
+
+  .lead-in {
+    @extend %muse-text-style-body;
+
+    &:has(+ :is(p, h3, .h3, h4, .h4)) {
+      margin-bottom: var(--muse-space-70);
+    }
+  }
+
+  .h1,
+  h1 {
+    @extend %muse-headline-display-reduced;
+
+    margin-top: 0;
+
+    &:has(+ :is(p, blockquote, .blockquote, pre)) {
+      margin-bottom: var(--muse-space-50);
+    }
+  }
+
+  .h2,
+  h2 {
+    @extend %muse-headline-heading-reduced;
+
+    margin-top: 0;
+
+    &:has(+ :is(p, blockquote, .blockquote, pre)) {
+      margin-bottom: var(--muse-space-50);
+    }
+    &:has(+ .lead-in) {
+      margin-bottom: var(--muse-space-50);
+    }
+    &:has(+ :is(h3, .h3, h4, .h4, h5, .h5, h6, .h6, ul, .ul, ol, .ol)) {
+      margin-bottom: var(--muse-space-50);
+    }
+    &:has(+ :is(picture, img, .picture, .image, video, .video, figure)) {
+      margin-bottom: var(--muse-space-100);
+    }
+    @media (width >= 600px) {
+      &:has(+ :is(picture, img, .picture, .image, video, .video, figure)) {
+        margin-bottom: var(--muse-space-70);
+      }
+    }
+  }
+
+  .h3,
+  h3 {
+    @extend %muse-headline-title;
+
+    margin-top: 0;
+
+    &:has(+ :is(p, blockquote, .blockquote, pre)) {
+      margin-bottom: var(--muse-space-40);
+
+      @media (width >= 600px) {
+        margin-bottom: var(--muse-space-50);
+      }
+    }
+    &:has(+ :is(h4, .h4)) {
+      margin-bottom: var(--muse-space-50);
+    }
+    &:has(+ :is(h5, .h5)) {
+      margin-bottom: var(--muse-space-50);
+    }
+
+    &:has(+ :is(.image, .picture, .table, .video, figure, img, picture, table, video)) {
+      margin-bottom: var(--muse-space-70);
+    }
+  }
+
+  .h4,
+  h4 {
+    @extend %muse-text-style-title-reduced;
+
+    margin-top: 0;
+
+    &:has(+ :is(p, blockquote, .blockquote, pre)) {
+      margin-bottom: var(--muse-space-40);
+    }
+  }
+
+  .h5,
+  h5,
+  .h6,
+  h6 {
+    @extend %muse-text-style-body--bold;
+
+    margin-top: 0;
+
+    &:has(+ :is(p, blockquote, .blockquote, pre)) {
+      margin-bottom: var(--muse-space-30);
+    }
+    &:has(+ :is(ul, ol, .ul, .ol)) {
+      margin-bottom: var(--muse-space-50);
+    }
+  }
+
+  ul,
+  ol,
+  .ul,
+  .ol {
+    font-size: var(--muse-font-size-30);
+    line-height: var(--muse-space-40);
+    margin-bottom: var(--muse-space-0);
+    margin-left: var(--muse-space-0);
+    margin-top: 0;
+    padding-left: 0;
+
+    // Safari specific override
+
+    &:has(+ :is(h3, .h3, h4, .h4)) {
+      margin-bottom: var(--muse-space-100);
+    }
+
+    &:has(+ p) {
+      margin-bottom: var(--muse-space-70);
+    }
+
+    &:has(+ :is(h6, .h6, ul, ol, .ul, .ol)) {
+      margin-bottom: var(--muse-space-100);
+    }
+
+    li {
+      margin: 0 0 var(--muse-space-50) var(--muse-space-50);
+      line-height: var(--muse-space-70);
+
+      ul,
+      ol {
+        margin-top: var(--muse-space-50);
+      }
+
+      &:last-of-type {
+        margin-bottom: var(--muse-space-0);
+
+        // I don't think these work - DAN H
+        &:has(+ :is(p, ul, ol, image, figure, video)) {
+          margin-bottom: var(--muse-space-70);
+        }
+
+        // I don't think these work - DAN H
+        &:has(+ :is(h3, .h3, h4, .h4)) {
+          margin-bottom: var(--muse-space-100);
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style-type: revert;
+  }
+
+  ol,
+  .ol {
+    margin-left: var(--muse-space-10);
+    list-style-type: decimal;
+
+    ol {
+      list-style-type: lower-alpha;
+
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    @supports (-webkit-hyphens: none) {
+      margin-left: var(--muse-space-20);
+    }
+  }
+
+  .list-label,
+  table caption {
+    font-size: var(--muse-font-size-30);
+    line-height: var(--muse-space-50);
+    font-weight: var(--muse-font-weight-500);
+    margin-bottom: var(--muse-space-50);
+    text-align: left;
+  }
+
+  blockquote,
+  .blockquote {
+    font-size: var(--muse-font-size-30);
+    border-left: 1px solid var(--muse-border-default);
+    padding-left: var(--muse-space-40);
+    margin-bottom: var(--muse-space-70);
+  }
+
+  figure {
+    margin-bottom: var(--muse-space-70);
+    img {
+      &:has(+ figcaption) {
+        margin-bottom: var(--muse-space-40);
+      }
+    }
+    figcaption {
+      line-height: var(--muse-line-height-10);
+      font-size: var(--muse-font-size-20);
+      color: var(--muse-text-default-lighter);
+
+      a {
+        line-height: var(--muse-line-height-10);
+      }
+    }
+  }
+
+  pre {
+    background-color: var(--muse-background-neutral-dark);
+    border: 1px solid var(--muse-border-default);
+    color: var(--muse-text-default);
+    font-family: 'Courier New', Courier, monospace;
+    padding: var(--muse-space-100);
+    margin: 0;
+  }
+}

@@ -1,0 +1,41 @@
+.muse-flex {
+  display: flex;
+}
+
+.muse-flex-1 {
+  flex: 1 1 0%;
+}
+
+.muse-flex-auto {
+  flex: 1 1 auto;
+}
+
+.muse-flex-initial {
+  flex: 0 1 auto;
+}
+
+.muse-flex-none {
+  flex: none;
+}
+
+.muse-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--muse-space-100) var(--muse-grid-gap-normal);
+
+  @media (width >= 600px) {
+    flex-direction: row;
+  }
+}
+
+.muse-stack-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--muse-space-100);
+}
+
+.muse-stack-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: var(--muse-grid-gap-normal);
+}

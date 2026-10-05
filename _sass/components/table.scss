@@ -1,0 +1,65 @@
+.muse-table {
+  font-family: var(--muse-font-family-default);
+  overflow: auto hidden;
+  width: 100%;
+
+  table {
+    border-collapse: collapse;
+    border: 1px solid var(--muse-border-default);
+    table-layout: auto;
+
+    th,
+    td {
+      border: 1px solid var(--muse-border-default);
+      padding: var(--muse-space-50) var(--muse-space-70);
+      text-align: left;
+    }
+
+    th {
+      background: var(--muse-background-neutral-darker);
+      font-size: var(--muse-font-size-30);
+      font-weight: var(--muse-font-weight-500);
+
+      &[scope='col'] {
+        width: auto;
+      }
+    }
+
+    td {
+      font-size: var(--muse-font-size-20);
+      font-weight: var(--muse-font-weight-300);
+    }
+  }
+
+  &-full-width {
+    table {
+      width: 100%;
+    }
+  }
+
+  &-fixed {
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+  }
+  &-trunc-text {
+    td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &-dense {
+    table th,
+    table td {
+      padding: var(--muse-space-30) var(--muse-space-50);
+    }
+  }
+  &-striped {
+    tr:nth-of-type(even) {
+      background: var(--muse-background-neutral-dark);
+    }
+  }
+}

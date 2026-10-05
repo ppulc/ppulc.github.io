@@ -1,0 +1,93 @@
+@use "muse";
+
+html {
+  font-size: 62.5% !important;
+}
+
+body {
+  --color-background-page: #f2f2f2;
+  margin: 0;
+  font-family: var(--muse-font-family-default), sans-serif;
+  font-weight: var(--muse-font-weight-300);
+  color: var(--muse-text-default);
+  background-color: var(--color-background-page);
+
+  > .root {
+    max-width: 1600px;
+    background-color: var(--muse-color-white);
+    margin: 0 auto;
+    box-shadow: 0 2px 5px #0000001f;
+  }
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 0 auto;
+  max-width: 1600px;
+  min-width: 320px;
+  z-index: 5000;
+}
+
+.header__masthead {
+  align-items: center;
+  background: var(--muse-color-white);
+  border-bottom: 1px solid var(--muse-color-gray-30);
+  column-gap: var(--muse-space-50);
+  display: grid;
+  grid-template-areas:
+".   logo utilities button .  "
+"nav nav  nav       nav    nav";
+  grid-template-columns: 0 57px auto 32px 0;
+  grid-template-rows: 57px 0;
+  height: 57px;
+  order: 2;
+  width: 100%;
+
+  @media only screen and (min-width: 48em) {
+    grid-template-columns: 0 85px auto 115px 0;
+    column-gap: var(--muse-space-110);
+  }
+
+  @media only screen and (min-width: 64em) {
+    display: flex;
+    column-gap: var(--muse-space-90);
+    height: 85px;
+    padding: 0 var(--muse-space-160);
+    position: relative;
+  }
+}
+
+.header__logo {
+  grid-area: logo;
+  height: 30px;
+
+  @media only screen and (min-width: 48em) {
+    height: 45px;
+  }
+
+  @media only screen and (min-width: 64em) {
+    height: 50px;
+  }
+
+  img {
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.header__nav {
+  align-self: baseline;
+  grid-area: nav;
+  height: 0;
+  width: 100%;
+  
+  @media only screen and (min-width: 64em) {
+    align-self: auto;
+    display: flex;
+    column-gap: var(--muse-space-90);
+    width: auto;
+  }
+}

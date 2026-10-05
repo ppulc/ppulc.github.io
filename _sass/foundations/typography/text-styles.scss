@@ -1,0 +1,60 @@
+@use 'mixins';
+
+.muse-text-style-10,
+.muse-text-style-caption,
+%muse-text-style-caption {
+  @include mixins.muse-text-style(10);
+}
+
+.muse-text-style-20,
+.muse-text-style-body-reduced,
+%muse-text-style-body-reduced {
+  @include mixins.muse-text-style(20);
+}
+
+.muse-text-style-30,
+.muse-text-style-body,
+%muse-text-style-body {
+  @include mixins.muse-text-style(30);
+}
+
+.muse-text-style-body--bold,
+%muse-text-style-body--bold {
+  @include mixins.muse-text-style(30, 500);
+}
+
+.muse-text-style-40,
+.muse-text-style-title-reduced,
+%muse-text-style-title-reduced {
+  @include mixins.muse-text-style(40);
+}
+
+.muse-text-style-50,
+.muse-text-style-title,
+%muse-text-style-title {
+  @include mixins.muse-text-style(50);
+}
+
+.muse-text-style-60,
+.muse-text-style-heading-reduced,
+%muse-text-style-heading-reduced {
+  @include mixins.muse-text-style(60);
+}
+
+.muse-text-style-70,
+.muse-text-style-heading,
+%muse-text-style-heading {
+  @include mixins.muse-text-style(70);
+}
+
+.muse-text-style-80,
+.muse-text-style-display-reduced,
+%muse-text-style-display-reduced {
+  @include mixins.muse-text-style(80);
+}
+
+.muse-text-style-90,
+.muse-text-style-display,
+%muse-text-style-display {
+  @include mixins.muse-text-style(90);
+}

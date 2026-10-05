@@ -1,0 +1,52 @@
+@use '../foundations/typography/text-styles.scss';
+
+.muse-inline-message,
+%muse-inline-message {
+  @extend %muse-text-style-body-reduced;
+
+  color: var(--muse-text-default-lighter);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    color: var(--muse-text-inverse);
+  }
+}
+
+.muse-inline-message--error {
+  @extend %muse-inline-message;
+
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><g clip-path="url(%23a)"><path fill="%23DB231A" d="M8 15.5a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Z"/><path stroke="%23fff" stroke-linecap="square" stroke-linejoin="round" d="M8 8.25v-4"/><path fill="%23fff" d="M8.5 10.75h-1v1h1v-1Z"/></g><defs><clipPath id="a"><path fill="%23fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>');
+  background-position: center left;
+  background-repeat: no-repeat;
+  color: var(--muse-text-default);
+  padding-left: calc(var(--muse-size-50) + var(--muse-space-40));
+}
+
+.muse-inline-message--info {
+  @extend %muse-inline-message;
+
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><g clip-path="url(%23a)"><path fill="%230070D2" d="M8 15.5a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Z"/><path fill="%23fff" d="M8.5 4.25h-1v1h1v-1Z"/><path stroke="%23fff" stroke-linecap="square" stroke-linejoin="round" d="M8 11.75v-4"/></g><defs><clipPath id="a"><path fill="%23fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>');
+  background-position: center left;
+  background-repeat: no-repeat;
+  color: var(--muse-text-default);
+  padding-left: calc(var(--muse-size-50) + var(--muse-space-40));
+}
+.muse-inline-message--success {
+  @extend %muse-inline-message;
+
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><mask id="a" width="16" height="16" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="%23000" d="M8 .5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15ZM6.354 11.354a.498.498 0 0 1-.707 0l-3-3 .707-.707L6 10.293l5.646-5.646.707.707-6 6Z"/></mask><g mask="url(%23a)"><path fill="%23058103" d="M16 0H0v16h16V0Z"/></g></svg>');
+  background-position: center left;
+  background-repeat: no-repeat;
+  color: var(--muse-text-default);
+  padding-left: calc(var(--muse-size-50) + var(--muse-space-40));
+}
+
+.muse-inline-message--warn {
+  @extend %muse-inline-message;
+
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path fill="%23D27700" d="m6.87 1.681-6.2 11.32c-.49.89.14 2 1.13 2h12.4c.99 0 1.62-1.1 1.13-2l-6.2-11.32c-.5-.91-1.76-.91-2.26 0Z"/><path stroke="%23fff" stroke-linecap="square" stroke-linejoin="round" d="M8 9.5v-4"/><path fill="%23fff" d="M8.5 12h-1v1h1v-1Z"/></svg>');
+  background-position: center left;
+  background-repeat: no-repeat;
+  color: var(--muse-text-default);
+  padding-left: calc(var(--muse-size-50) + var(--muse-space-40));
+}

@@ -1,0 +1,48 @@
+@use '../foundations/form-elements.scss';
+@use '../foundations/typography/text-styles.scss';
+
+.muse-textarea {
+  border-radius: var(--muse-radius-30);
+  border: 1px solid var(--muse-form-field-border);
+  display: grid;
+  grid-template-areas:
+    'label'
+    'input';
+  margin-bottom: var(--muse-space-40);
+  padding: 0 var(--muse-space-60) var(--muse-space-40) var(--muse-space-60);
+
+  &:focus-within {
+    @extend %muse-focus-ring;
+  }
+
+  label {
+    @extend %muse-text-style-body-reduced;
+
+    align-items: end;
+    background: var(--muse-form-field-background);
+    color: var(--muse-form-field-text-secondary);
+    display: flex;
+    grid-area: label;
+    height: var(--muse-space-60);
+    margin-top: -10px;
+    padding: 0 var(--muse-space-20);
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+  }
+
+  textarea {
+    @extend %muse-text-style-body--bold;
+
+    background: transparent;
+    border: 0;
+    color: inherit;
+    margin-top: var(--muse-space-10);
+    width: 100%;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

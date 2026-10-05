@@ -1,0 +1,126 @@
+@use '../foundations/form-elements.scss';
+@use '../foundations/typography/text-styles.scss';
+
+.muse-checkbox,
+%muse-checkbox {
+  grid-template-areas:
+    'input label'
+    'input label';
+  column-gap: var(--muse-space-40);
+  display: grid;
+  justify-items: start;
+  margin-bottom: var(--muse-space-40);
+  place-content: start start;
+
+  &:hover {
+    div.muse-checkbox-label {
+      color: var(--muse-form-field-text-hover);
+    }
+
+    input {
+      border-color: var(--muse-form-field-border-hover);
+    }
+  }
+
+  &--tile {
+    align-items: center;
+    border-radius: var(--muse-radius-30);
+    border: 1px solid var(--muse-form-field-tile-border);
+    padding-left: var(--muse-space-50);
+
+    &:hover {
+      border-color: var(--muse-form-field-border-hover);
+    }
+
+    .muse-checkbox-text {
+      border-left: 1px solid var(--muse-form-field-tile-border);
+      padding: var(--muse-space-50);
+
+      div.muse-checkbox-label {
+        @extend %muse-text-style-body--bold;
+      }
+    }
+
+    &:focus-within {
+      @extend %muse-focus-ring;
+
+      input {
+        box-shadow: none;
+      }
+    }
+
+    &:has(input:checked) {
+      border: 1px solid var(--muse-form-field-border-active);
+    }
+  }
+
+  &--reduced {
+    input[type='checkbox'],
+    div.muse-custom-checkmark {
+      width: var(--muse-size-50);
+      height: var(--muse-size-50);
+    }
+
+    .muse-checkbox-text div.muse-checkbox-label {
+      @extend %muse-text-style-body-reduced;
+    }
+    .muse-checkbox-text div.muse-checkbox-secondary-text {
+      @extend %muse-text-style-caption;
+    }
+  }
+
+  input {
+    appearance: none;
+    background-color: var(--muse-form-field-background);
+    border-radius: var(--muse-radius-20);
+    border: 1px solid var(--muse-form-field-border);
+    color: currentColor;
+    font: inherit;
+    grid-area: input;
+    height: var(--muse-size-60);
+    margin: 0;
+    width: var(--muse-size-60);
+
+    &:checked {
+      background-color: var(--muse-form-field-checked-fill);
+      border: 1px solid var(--muse-form-field-border-active);
+
+      + .muse-custom-checkmark {
+        visibility: visible;
+      }
+    }
+    &:focus-visible {
+      @extend %muse-focus-ring;
+    }
+  }
+
+  .muse-custom-checkmark {
+    align-items: center;
+    color: var(--muse-form-field-checkmark);
+    display: flex;
+    grid-area: input;
+    height: var(--muse-size-60);
+    justify-content: center;
+    visibility: hidden;
+    width: var(--muse-size-60);
+  }
+
+  .muse-checkbox-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--muse-space-30);
+    grid-area: label;
+
+    .muse-checkbox-label {
+      @extend %muse-text-style-body;
+
+      color: var(--muse-form-field-text);
+    }
+
+    .muse-checkbox-secondary-text {
+      @extend %muse-text-style-body-reduced;
+
+      color: var(--muse-form-field-text-secondary);
+    }
+  }
+}

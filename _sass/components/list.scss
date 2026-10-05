@@ -1,0 +1,76 @@
+@use '../foundations/typography/text-styles.scss';
+@use '../foundations/typography/mixins.scss';
+
+.muse-list,
+%muse-list {
+  --muse-list-text-color: var(--muse-text-default);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    --muse-list-text-color: var(--muse-text-inverse);
+  }
+  @extend %muse-text-style-body;
+
+  color: var(--muse-list-text-color);
+  margin-bottom: var(--muse-space-0);
+  margin-left: var(--muse-space-0);
+  margin-top: 0;
+  padding-left: 0;
+
+  &:has(+ :is(ul, ol, .ul, .ol)) {
+    margin-bottom: var(--muse-space-100);
+  }
+
+  li {
+    margin: 0 0 var(--muse-space-50) var(--muse-space-50);
+    line-height: var(--muse-space-70);
+
+    ul,
+    ol {
+      margin-top: var(--muse-space-50);
+      margin-bottom: var(--muse-space-0);
+      margin-left: var(--muse-space-0);
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: var(--muse-space-0);
+    }
+  }
+
+  ul {
+    list-style-type: revert;
+  }
+
+  ol,
+  .ol {
+    list-style-type: decimal;
+    margin-bottom: var(--muse-space-0);
+    margin-left: var(--muse-space-10);
+    margin-top: 0;
+    padding-left: 0;
+
+    ol {
+      list-style-type: lower-alpha;
+
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    @supports (-webkit-hyphens: none) {
+      margin-left: var(--muse-space-20);
+    }
+  }
+}
+
+.muse-list--reduced {
+  @extend %muse-list;
+
+  font-size: var(--muse-font-size-20);
+  line-height: var(--muse-line-height-20);
+}

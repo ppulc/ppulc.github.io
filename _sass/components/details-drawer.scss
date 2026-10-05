@@ -1,0 +1,32 @@
+@use '../foundations/typography/text-styles.scss';
+
+.muse-details-drawer {
+  @extend %muse-text-style-body;
+
+  background: var(--muse-background-neutral-dark);
+  border-radius: var(--muse-radius-30);
+  color: var(--muse-text-default);
+  padding: var(--muse-space-90);
+
+  &[open] > summary:first-of-type {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" fill="none"><path fill="currentColor" d="m5.655.388-5.5 5.5.707.707L6.01 1.448l5.129 5.129.707-.707L6.362.388a.5.5 0 0 0-.707 0Z"/></svg>');
+    font-weight: var(--muse-font-weight-500);
+  }
+
+  summary {
+    @extend %muse-text-style-title-reduced;
+
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" fill="none"><path fill="currentColor" d="M5.991 7.241a.499.499 0 0 0 .354-.146l5.5-5.5-.707-.707L5.99 6.034.862.905l-.707.707 5.483 5.483a.498.498 0 0 0 .353.146Z"/></svg>');
+    background-position: center right;
+    background-repeat: no-repeat;
+    list-style: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  summary + * {
+    margin-top: var(--muse-space-70);
+  }
+}

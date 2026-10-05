@@ -1,0 +1,45 @@
+@use '../foundations/typography/text-styles.scss';
+
+.muse-badge,
+%muse-badge {
+  @extend %muse-text-style-body-reduced;
+
+  border-radius: var(--muse-radius-10);
+  border: 1px solid var(--muse-border-default-darker);
+  color: var(--muse-text-default-lighter);
+  display: inline-flex;
+  padding: var(--muse-space-20) var(--muse-space-30);
+  width: fit-content;
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    border: 1px solid var(--muse-border-inverse);
+    color: var(--muse-text-inverse);
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.muse-badge--promo {
+  @extend %muse-badge;
+
+  border: 1px solid var(--muse-border-success);
+  color: var(--muse-text-success);
+
+  [class*='__muse-theme--dark'] &,
+  [data-theme='dark'] & {
+    border: 1px solid var(--muse-border-success-light);
+    color: var(--muse-text-success-lighter);
+  }
+}
+
+.muse-badge--reduced {
+  @extend %muse-badge;
+
+  p {
+    @extend %muse-text-style-caption;
+  }
+}

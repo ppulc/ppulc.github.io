@@ -1,0 +1,86 @@
+.muse-quantity-stepper {
+  font-family: var(--muse-font-family-default);
+
+  &-label {
+    color: var(--muse-text-default, var(--muse-text-neutral-default, #1b1c1d));
+    display: block;
+    font-size: var(--muse-font-size-40);
+    font-weight: var(--muse-font-weight-300);
+    margin-bottom: var(--muse-space-40);
+  }
+  &-inner-wrapper {
+    display: flex;
+    margin-bottom: var(--muse-space-40);
+  }
+  &-button {
+    align-items: center;
+    background: var(--muse-background-neutral);
+    border: 1px solid var(--muse-border-default);
+    display: flex;
+    font-size: var(--muse-font-size-30);
+    height: var(--muse-space-120);
+    justify-content: center;
+    width: var(--muse-space-120);
+
+    > svg {
+      fill: var(--muse-text-default);
+    }
+
+    &:first-of-type {
+      border-radius: var(--muse-radius-30) 0 0 var(--muse-radius-30);
+      border-right: transparent;
+    }
+    &:last-of-type {
+      border-left: transparent;
+      border-radius: 0 var(--muse-radius-30) var(--muse-radius-30) 0;
+    }
+
+    &:hover {
+      > svg {
+        fill: var(--muse-text-accent);
+      }
+    }
+    &:focus-visible {
+      border: 2px solid var(--muse-border-accent, #0070d2);
+    }
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+  &-input {
+    background: var(--muse-background-neutral);
+    border: 1px solid var(--muse-border-default);
+    font-size: var(--muse-font-size-30);
+    height: var(--muse-space-120);
+    line-height: var(--muse-line-height-30);
+    max-width: 100px;
+    padding: var(--muse-space-50) var(--muse-space-0) var(--muse-space-50) var(--muse-space-50);
+    text-align: center;
+
+    &:focus-visible {
+      border: 2px solid var(--muse-border-accent, #0070d2);
+    }
+  }
+  &-caption {
+    color: var(--muse-text-default-lighter);
+    display: block;
+    font-size: var(--muse-font-size-20);
+    font-weight: var(--muse-font-weight-300);
+
+    > svg {
+      fill: var(--muse-text-default);
+      margin-right: var(--muse-space-30);
+    }
+  }
+}
+
+.muse-quantity-stepper--error {
+  .muse-quantity-stepper-input {
+    border-color: var(--muse-border-error);
+  }
+  .muse-quantity-stepper-caption {
+    svg {
+      fill: var(--muse-text-error);
+    }
+  }
+}

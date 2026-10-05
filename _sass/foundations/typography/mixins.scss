@@ -1,0 +1,17 @@
+@use '../../_functions/generics.scss';
+
+/* stylelint-disable custom-property-pattern -- seems like it gets cranky with the vars */
+
+@mixin muse-text-style($size, $weight: '300') {
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-#{generics.str-replace(#{$size}, ' ', '-')});
+  font-weight: var(--muse-font-weight-#{generics.str-replace(#{$weight}, ' ', '-')});
+  line-height: var(--muse-line-height-#{generics.str-replace(#{$size}, ' ', '-')});
+
+  @if $size == 10 {
+    letter-spacing: var(--muse-letter-spacing-wide);
+  }
+  @if $size == 90 {
+    letter-spacing: var(--muse-letter-spacing-tight);
+  }
+}

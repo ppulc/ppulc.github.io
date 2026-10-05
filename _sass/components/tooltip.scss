@@ -1,0 +1,85 @@
+@use '../foundations/typography/text-styles.scss';
+
+%muse-tooltip {
+  @extend %muse-text-style-body;
+
+  background: var(--muse-background-neutral-darker);
+  border-radius: var(--muse-radius-20);
+  border: 1px solid var(--muse-border-default);
+  box-shadow: var(--muse-elevation-high);
+  display: flex;
+  max-width: 276px;
+  padding: var(--muse-space-50);
+  position: relative;
+
+  &::before {
+    background: var(--muse-background-neutral-darker);
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid var(--muse-border-default);
+    border-radius: var(--muse-radius-20);
+    border-right: 1px solid transparent;
+    border-top: 1px solid var(--muse-border-default);
+    content: '';
+    display: block;
+    height: 16px;
+    position: absolute;
+    rotate: 45deg;
+    width: 16px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.muse-tooltip--tl {
+  @extend %muse-tooltip;
+  &::before {
+    left: 8px;
+    top: -8px;
+  }
+}
+
+.muse-tooltip--tm {
+  @extend %muse-tooltip;
+  &::before {
+    left: 50%;
+    top: -8px;
+  }
+}
+
+.muse-tooltip--tr {
+  @extend %muse-tooltip;
+  &::before {
+    right: 8px;
+    top: -8px;
+  }
+}
+
+.muse-tooltip--bl {
+  @extend %muse-tooltip;
+  &::before {
+    bottom: -8px;
+    left: 8px;
+    rotate: 225deg;
+  }
+}
+
+.muse-tooltip--bm {
+  @extend %muse-tooltip;
+  &::before {
+    bottom: -8px;
+    left: 50%;
+    rotate: 225deg;
+  }
+}
+
+.muse-tooltip--br {
+  @extend %muse-tooltip;
+  &::before {
+    bottom: -8px;
+    right: 8px;
+    rotate: 225deg;
+  }
+}

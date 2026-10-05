@@ -1,0 +1,31 @@
+.muse-avatar {
+  align-items: center;
+  background: var(--muse-background-neutral-darkest);
+  border-radius: 100%;
+  color: var(--muse-text-inverse);
+  display: flex;
+  font-family: var(--muse-font-family-default);
+  font-size: var(--muse-font-size-20);
+  height: var(--muse-size-110);
+  justify-content: center;
+  object-fit: cover;
+  width: var(--muse-size-110);
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+  }
+
+  @media (width >= 1024px) {
+    width: var(--muse-size-50);
+    height: var(--muse-size-50);
+
+    span {
+      display: block;
+      width: 1ch;
+      overflow: hidden;
+      font-size: 1rem;
+    }
+  }
+}
