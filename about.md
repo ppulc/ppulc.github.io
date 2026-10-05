@@ -1,0 +1,18 @@
+---
+layout: default
+title: Our team in Prague
+breadcrumb: Our team
+section: about
+permalink: /about/
+description: Meet the Cisco Threat Detection and Response Data Science team in Prague and learn how we build machine-learning security products.
+---
+
+<section class="page-hero"><div class="page-width page-hero__inner"><p class="eyebrow">Our team</p><h1>Research and engineering, together in Prague</h1><p>We are an international team of more than 100 researchers, engineers, and data scientists building machine-learning systems for Cisco Security.</p></div></section>
+
+<section class="section"><div class="page-width content-grid"><div class="content-aside"><p class="eyebrow">Who we are</p><h2>Part of Cisco Security</h2></div><div class="prose"><p>Cisco Security is one of the pillars of the Cisco portfolio, and our Prague team belongs to its Security Business Group. We collaborate every day with colleagues across the world. Across the wider portfolio, Cisco XDR brings security infrastructure together to improve simplicity, visibility, and efficiency.</p><p>Our focus is complex network threat detection. We analyze traffic from millions of devices to identify suspicious behavior, building solutions with machine learning and artificial intelligence that contribute to several Cisco Security products.</p><p>We own the full research and development journey: shaping an idea, creating prototypes, designing and evaluating innovative models on very large datasets, and delivering scalable, efficient, automated machine-learning pipelines into production.</p></div></div></section>
+
+<section class="section section--soft"><div class="page-width"><div class="section-heading"><p class="eyebrow">Beyond our products</p><h2>Connected to the research community</h2></div><div class="capability-grid"><article class="capability-card"><span class="capability-card__number">01</span><h3>University partnerships</h3><p>We work with research institutions and universities in the Czech Republic and internationally.</p></article><article class="capability-card"><span class="capability-card__number">02</span><h3>Public research</h3><p>Our researchers publish at international conferences and contribute inventions to Cisco’s patent portfolio.</p></article><article class="capability-card"><span class="capability-card__number">03</span><h3>Data Science Summit</h3><p>Each year we bring together data scientists and AI experts from across Cisco to share their work.</p></article></div></div></section>
+
+<section class="section"><div class="page-width content-grid"><div class="content-aside"><p class="eyebrow">Where we are</p><h2>In the heart of Prague</h2></div><div class="prose"><p>Our office is in Charles Square Center, across the street from the historic Czech Technical University building and just a few steps from the Vltava River. The windows look toward Prague Castle.</p><p>The <a href="http://alesjungmann.cz/project/cisco/">high-tech office</a> spans two floors and includes a bouldering room, a massage chair, and kitchens stocked with good coffee and tea. The building itself brings a supermarket, stationery shop, café, bank, florist, post office, organic food shop, and gym under one roof.</p><p>Curious about the neighborhood? Read more about the <a href="https://www.karlakshopping.cz/en/about/">history of Charles Square</a>, or <a href="{{ '/contact/' | relative_url }}">find our address and contacts</a>.</p></div></div></section>
+
+<section class="section contact-band section--soft"><div class="page-width contact-band__inner"><div><p class="eyebrow">Join the team</p><h2>Make security better at global scale.</h2></div><a class="muse-button-secondary" href="{{ '/careers/' | relative_url }}">See opportunities</a></div></section>

@@ -14,7 +14,7 @@
         <div class="utility-bar" aria-label="Cisco links">
             <div class="page-width utility-bar__inner">
                 <a href="https://www.cisco.com/" rel="external">Cisco.com</a>
-                <a href="#contact">Contact</a>
+                <a href="{{ '/contact/' | relative_url }}">Contact</a>
             </div>
         </div>
 
@@ -24,21 +24,24 @@
             </a>
 
             <nav class="desktop-nav" aria-label="Primary navigation">
-                <a href="#work">Our work</a>
-                <a href="#approach">How we work</a>
-                <a href="#team">Our team</a>
-                <a href="#contact">Connect</a>
+                <a href="{{ '/about/' | relative_url }}"{% if page.section == 'about' %} aria-current="page"{% endif %}>Our team</a>
+                <a href="{{ '/research/' | relative_url }}"{% if page.section == 'research' %} aria-current="page"{% endif %}>Research</a>
+                <a href="{{ '/students/' | relative_url }}"{% if page.section == 'students' %} aria-current="page"{% endif %}>Students</a>
+                <a href="{{ '/careers/' | relative_url }}"{% if page.section == 'careers' %} aria-current="page"{% endif %}>Careers</a>
+                <a href="{{ '/news/' | relative_url }}"{% if page.section == 'news' %} aria-current="page"{% endif %}>News</a>
             </nav>
 
-            <a class="header-cta muse-button-secondary muse-button-secondary--reduced" href="#contact">Work with us</a>
+            <a class="header-cta muse-button-secondary muse-button-secondary--reduced" href="{{ '/careers/' | relative_url }}">Work with us</a>
 
             <details class="mobile-menu">
                 <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
                 <nav aria-label="Mobile navigation">
-                    <a href="#work">Our work</a>
-                    <a href="#approach">How we work</a>
-                    <a href="#team">Our team</a>
-                    <a href="#contact">Connect</a>
+                    <a href="{{ '/about/' | relative_url }}">Our team</a>
+                    <a href="{{ '/research/' | relative_url }}">Research</a>
+                    <a href="{{ '/students/' | relative_url }}">Students</a>
+                    <a href="{{ '/careers/' | relative_url }}">Careers</a>
+                    <a href="{{ '/news/' | relative_url }}">News</a>
+                    <a href="{{ '/contact/' | relative_url }}">Contact</a>
                 </nav>
             </details>
         </div>
@@ -47,16 +50,20 @@
             <nav class="page-width breadcrumb" aria-label="Breadcrumb">
                 <a href="https://www.cisco.com/">Cisco</a>
                 <span aria-hidden="true">/</span>
-                <a href="{{ '/' | relative_url }}">Threat Detection &amp; Response</a>
+                {% if page.url == '/' %}
+                <span aria-current="page">TD&amp;R Data Science</span>
+                {% else %}
+                <a href="{{ '/' | relative_url }}">TD&amp;R Data Science</a>
                 <span aria-hidden="true">/</span>
-                <span aria-current="page">Data Science</span>
+                <span aria-current="page">{{ page.breadcrumb | default: page.title }}</span>
+                {% endif %}
             </nav>
         </div>
     </header>
 
     <main id="main-content">{{ content }}</main>
 
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer">
         <div class="page-width footer-main">
             <div class="footer-intro">
                 <a class="footer-logo" href="{{ '/' | relative_url }}" aria-label="Cisco TD&R Data Science home">
@@ -66,14 +73,17 @@
             </div>
             <div class="footer-links">
                 <h2>Explore</h2>
-                <a href="#work">Our work</a>
-                <a href="#approach">How we work</a>
-                <a href="#team">Our team</a>
+                <a href="{{ '/about/' | relative_url }}">Our team</a>
+                <a href="{{ '/research/' | relative_url }}">Research</a>
+                <a href="{{ '/students/' | relative_url }}">Students</a>
+                <a href="{{ '/news/' | relative_url }}">News</a>
             </div>
             <div class="footer-links">
                 <h2>Connect</h2>
-                <a href="https://www.cisco.com/c/en/us/about/careers.html">Careers at Cisco</a>
-                <a href="https://www.cisco.com/site/us/en/about/contact-cisco/index.html">Contact Cisco</a>
+                <a href="{{ '/careers/' | relative_url }}">Work with us</a>
+                <a href="{{ '/contact/' | relative_url }}">Contact the Prague team</a>
+                <a href="https://blogs.cisco.com/security">Cisco Security blog</a>
+                <a href="https://www.linkedin.com/company/cisco/posts/">Cisco on LinkedIn</a>
             </div>
         </div>
         <div class="page-width footer-legal">
