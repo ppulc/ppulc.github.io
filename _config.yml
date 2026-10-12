@@ -1,2 +1,3 @@
-domain: github.pulc.eu
 url: https://github.pulc.eu
+baseurl: ""
+encoding: UTF-8
