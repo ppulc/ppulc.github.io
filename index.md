@@ -27,7 +27,7 @@ description: The Cisco Threat Detection and Response Data Science team in Prague
 <section class="section section--intro">
   <div class="page-width intro-grid">
     <div><p class="eyebrow">Who we are</p><h2>More than 100 researchers, engineers, and data scientists</h2></div>
-    <div class="intro-copy"><p>Based in Prague and connected to colleagues worldwide, we are part of Cisco Security. We combine machine learning, artificial intelligence, threat research, and product engineering to strengthen network threat detection.</p><a class="text-link" href="{{ '/about/' | relative_url }}">Meet the Prague team <span aria-hidden="true">→</span></a></div>
+    <div class="intro-copy"><p>Based in Prague and connected to colleagues worldwide, our data scientists contribute across Cisco XDR, Cisco Talos, Cisco Email Threat Defense, and Splunk Security. We combine machine learning, threat research, and product engineering to strengthen detection and response.</p><a class="text-link" href="{{ '/about/' | relative_url }}">Meet the Prague team <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
@@ -35,7 +35,7 @@ description: The Cisco Threat Detection and Response Data Science team in Prague
   <div class="page-width">
     <div class="section-heading"><p class="eyebrow">Explore</p><h2>Research, opportunity, and life in Prague</h2></div>
     <div class="topic-grid">
-      <a class="topic-card" href="{{ '/research/' | relative_url }}"><span class="topic-card__kicker">Research</span><h3>Publications and applied science</h3><p>Explore selected papers, featured authors, and the research behind our security products.</p><span class="text-link">See our research <span aria-hidden="true">→</span></span></a>
+      <a class="topic-card" href="{{ '/research/' | relative_url }}"><span class="topic-card__kicker">Research</span><h3>Publications and applied science</h3><p>Explore selected papers, research themes, and the science behind our security products.</p><span class="text-link">See our research <span aria-hidden="true">→</span></span></a>
       <a class="topic-card" href="{{ '/students/' | relative_url }}"><span class="topic-card__kicker">Students</span><h3>Theses with real-world impact</h3><p>Work on challenging machine learning, security, and software engineering problems with our team.</p><span class="text-link">Browse thesis topics <span aria-hidden="true">→</span></span></a>
       <a class="topic-card" href="{{ '/careers/' | relative_url }}"><span class="topic-card__kicker">Careers</span><h3>Find your fit at Cisco</h3><p>Bring your research or engineering skills to a team building security at global scale.</p><span class="text-link">View opportunities <span aria-hidden="true">→</span></span></a>
       <a class="topic-card" href="{{ '/news/' | relative_url }}"><span class="topic-card__kicker">News</span><h3>What our team has been doing</h3><p>Read updates on community work, conferences, partnerships, talks, and threat research.</p><span class="text-link">Read team news <span aria-hidden="true">→</span></span></a>
@@ -46,14 +46,14 @@ description: The Cisco Threat Detection and Response Data Science team in Prague
 <section class="section">
   <div class="page-width feature-grid">
     <div class="feature-visual" aria-hidden="true"><div class="signal-card signal-card--one"><span></span><span></span><span></span></div><div class="signal-card signal-card--two"><span></span><span></span><span></span></div><div class="signal-orbit"></div><div class="signal-core">ML</div></div>
-    <div class="feature-copy"><p class="eyebrow">How we work</p><h2>From an idea to a working product</h2><p>Our research and development process is end-to-end. We invent, design, develop, and evaluate models on very large datasets, then build scalable automated pipelines that bring effective ideas into Cisco Security products.</p><ul class="check-list"><li>Machine learning for network threat detection</li><li>Large-scale traffic and behavior analysis</li><li>Collaboration with universities worldwide</li></ul></div>
+    <div class="feature-copy"><p class="eyebrow">How we work</p><h2>From an idea to a working product</h2><p>Our research and development process is end-to-end. We invent, design, develop, and evaluate models on very large datasets, then build scalable automated pipelines that bring effective ideas into Cisco and Splunk security products.</p><ul class="check-list"><li>Behavioral, graph, endpoint, and malware analytics</li><li>Large-scale telemetry and real-time detection pipelines</li><li>Explainable insights for security investigations</li></ul></div>
   </div>
 </section>
 
 <section class="section section--dark">
   <div class="page-width team-grid">
     <div><p class="eyebrow">Our community</p><h2>Research grows through collaboration</h2></div>
-    <div><p>We publish at international conferences, contribute to Cisco’s patent portfolio, partner with research institutions, and organize the annual Cisco Data Science Summit for data scientists and AI experts across Cisco.</p><a class="muse-button-primary muse-button-primary--contrast" href="{{ '/research/' | relative_url }}">View publications</a></div>
+    <div><p>We publish peer-reviewed research, contribute to Cisco’s patent portfolio, partner with universities, mentor emerging talent, and organize the annual Cisco Data Science Summit for data scientists and AI experts across Cisco.</p><a class="muse-button-primary muse-button-primary--contrast" href="{{ '/research/' | relative_url }}">View publications</a></div>
   </div>
 </section>
 

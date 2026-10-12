@@ -275,6 +275,17 @@ h3 { margin: 0; font-size: 2.4rem; line-height: 1.333; }
 .topic-card__kicker { margin-bottom: var(--muse-space-90); color: var(--site-accent); font-size: var(--muse-font-size-20); font-weight: var(--muse-font-weight-600); text-transform: uppercase; letter-spacing: .08em; }
 .topic-card p { margin: var(--muse-space-50) 0 var(--muse-space-80); color: var(--site-subtle); }
 .topic-card .text-link { margin-top: auto; }
+.success-grid { display: grid; gap: var(--muse-space-60); }
+
+.success-card {
+  padding: var(--muse-space-80);
+  border-top: 3px solid var(--site-accent);
+  background: var(--muse-background-neutral);
+  box-shadow: var(--muse-elevation-default);
+}
+
+.success-card > span { display: block; margin-bottom: var(--muse-space-80); color: var(--site-accent); font-size: var(--muse-font-size-20); font-weight: var(--muse-font-weight-600); text-transform: uppercase; letter-spacing: .07em; }
+.success-card p { margin: var(--muse-space-50) 0 0; color: var(--site-subtle); line-height: 1.6; }
 .feature-grid { align-items: center; }
 
 .feature-visual {
@@ -374,6 +385,17 @@ h3 { margin: 0; font-size: 2.4rem; line-height: 1.333; }
   color: var(--muse-text-inverse);
 }
 
+.page-hero::before {
+  position: absolute;
+  right: 3%;
+  bottom: 0;
+  width: min(72rem, 72vw);
+  height: 30rem;
+  background: url("../images/prague.svg") right bottom / contain no-repeat;
+  content: "";
+  opacity: .24;
+}
+
 .page-hero::after {
   position: absolute;
   top: -20rem;
@@ -395,6 +417,10 @@ h3 { margin: 0; font-size: 2.4rem; line-height: 1.333; }
 .page-hero h1, .page-hero .eyebrow { color: var(--muse-text-inverse); }
 .page-hero p:last-child { max-width: 76rem; margin: var(--muse-space-70) 0 0; color: var(--muse-color-white-alpha-85); font-size: 2rem; line-height: 1.5; }
 
+@media (max-width: 640px) {
+  .page-hero::before { right: -9rem; width: 56rem; height: 23rem; opacity: .16; }
+}
+
 .content-grid { display: grid; gap: var(--muse-space-100); }
 .content-aside h2 { max-width: 46rem; }
 .prose { max-width: 78rem; }
@@ -412,10 +438,6 @@ h3 { margin: 0; font-size: 2.4rem; line-height: 1.333; }
 .publication-list a:hover span, .publication-list a:focus-visible span { color: var(--site-accent-hover); text-decoration: underline; }
 .publication-list span { color: var(--site-ink); font-size: 1.8rem; font-weight: var(--muse-font-weight-500); line-height: 1.45; }
 .publication-list small { color: var(--site-subtle); font-size: var(--muse-font-size-20); }
-.author-list { display: flex; flex-wrap: wrap; gap: var(--muse-space-40); margin-bottom: var(--muse-space-80); }
-.author-list a { padding: var(--muse-space-30) var(--muse-space-50); border: 1px solid var(--site-border); border-radius: 10rem; background: var(--muse-background-neutral); color: var(--site-ink); text-decoration: none; }
-.author-list a:hover, .author-list a:focus-visible { border-color: var(--site-accent); color: var(--site-accent-hover); }
-
 .contact-grid { display: grid; gap: var(--muse-space-60); }
 .contact-card { padding: var(--muse-space-90); border: 1px solid var(--muse-border-default); border-radius: var(--muse-radius-30); box-shadow: var(--muse-elevation-default); }
 .contact-card h2 { font-size: 2.8rem; }
@@ -464,7 +486,7 @@ h3 { margin: 0; font-size: 2.4rem; line-height: 1.333; }
   h1 { font-size: 3.2rem; line-height: 1.25; }
   h2 { font-size: 3.2rem; line-height: 1.25; }
   .capability-grid, .footer-main { grid-template-columns: repeat(2, 1fr); }
-  .topic-grid, .contact-grid, .news-list { grid-template-columns: repeat(2, 1fr); }
+  .topic-grid, .contact-grid, .news-list, .success-grid { grid-template-columns: repeat(2, 1fr); }
   .capability-card:last-child { grid-column: 1 / -1; }
   .footer-intro { grid-row: span 2; }
 }
@@ -497,6 +519,7 @@ h3 { margin: 0; font-size: 2.4rem; line-height: 1.333; }
   .contact-band__inner > a { flex: 0 0 auto; }
   .footer-main { grid-template-columns: 2fr 1fr 1fr; }
   .topic-grid { grid-template-columns: repeat(2, 1fr); }
+  .success-grid { grid-template-columns: repeat(3, 1fr); }
   .thesis-layout { grid-template-columns: 22rem minmax(0, 1fr); gap: var(--muse-space-140); }
   .thesis-nav { position: sticky; top: 3rem; display: flex; height: fit-content; flex-direction: column; gap: var(--muse-space-40); padding-left: var(--muse-space-60); border-left: 2px solid var(--muse-border-default); }
   .thesis-nav p { margin: 0 0 var(--muse-space-20); color: var(--site-subtle); font-size: var(--muse-font-size-20); font-weight: var(--muse-font-weight-600); text-transform: uppercase; letter-spacing: .06em; }
